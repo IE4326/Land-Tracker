@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LandtrackerDialogBase</class>
+ <widget class="QDialog" name="LandtrackerDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>585</width>
+    <height>692</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Land Tracker</string>
+  </property>
+  <widget class="QDialogButtonBox" name="button_box">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>640</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_point">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>10</y>
+     <width>568</width>
+     <height>180</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Точка</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_point">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>87</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>⨁</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_pointCoordinates">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>30</y>
+      <width>90</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Координаты</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_point_x">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>430</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_point_x">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>67</y>
+      <width>20</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_point_y">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>20</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Y</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_point_y">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>110</y>
+      <width>430</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_costMatrix">
+   <property name="geometry">
+    <rect>
+     <x>8</x>
+     <y>199</y>
+     <width>360</width>
+     <height>410</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Матрица стоимостей</string>
+   </property>
+   <widget class="QCheckBox" name="checkBox_enableRoadsLayer">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>200</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Дорожные сети               </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_DEM">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>130</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ЦМР</string>
+    </property>
+   </widget>
+   <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox_roads">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>230</y>
+      <width>160</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox_surface">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>160</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox_DEM">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>160</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_enableSurfaceLayer">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Поверхности                    </string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget_surfaceParameters">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>70</y>
+      <width>130</width>
+      <height>193</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_surfaceParameters">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>40</y>
+      <width>130</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Поверхности</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>193</x>
+      <y>60</y>
+      <width>3</width>
+      <height>210</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_makeCostMatrix">
+    <property name="geometry">
+     <rect>
+      <x>252</x>
+      <y>360</y>
+      <width>88</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Построить</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>280</y>
+      <width>330</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_alignRasters">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>364</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Привести растры</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_calculationMode">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>310</y>
+      <width>160</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Скорость</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Точность</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_path">
+   <property name="geometry">
+    <rect>
+     <x>376</x>
+     <y>199</y>
+     <width>200</width>
+     <height>410</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Путь</string>
+   </property>
+   <widget class="QLabel" name="label_costMatrixLayer">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>150</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Растр стоимостей</string>
+    </property>
+   </widget>
+   <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox_costMatrixLayer">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>160</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_pathOutput">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>210</y>
+      <width>160</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Вывод</string>
+    </property>
+    <widget class="QRadioButton" name="radioButton_pathOutput_raster">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>105</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Растр</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButton_pathOutput_vector">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>105</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Вектор</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_makePath">
+    <property name="geometry">
+     <rect>
+      <x>94</x>
+      <y>360</y>
+      <width>88</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Проложить</string>
+    </property>
+   </widget>
+   <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox_directionMatrixLayer">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>160</width>
+      <height>32</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_costMatrixLayer_directionMatrixLayer">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>150</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Растр направлений</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsmaplayercombobox.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>button_box</sender>
+   <signal>accepted()</signal>
+   <receiver>LandtrackerDialogBase</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_box</sender>
+   <signal>rejected()</signal>
+   <receiver>LandtrackerDialogBase</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
